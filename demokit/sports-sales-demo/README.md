@@ -22,8 +22,8 @@ In this demo, working as the senior data scientist, you will see how the senior 
 In addition, s the junior data scientist, you will:
 1. Log into the Rasgo web app.
 2. Find the sales data.
-    a. Explore the data
-    b. Create an intial modeling dataset.
+    1. Explore the data
+    2. Create an intial modeling dataset.
 3. Find and join weather data.
 4. Aggregate weekly data and perform feature engineering.
 4. Extract the data from Rasgo to pandas for final analysis
@@ -348,8 +348,8 @@ In this demo, you have seen how a senior data scientist can leverage Rasgo to sh
 In addition, the rest of the team can easily find and extend this work to reduce duplication of data preparation and feature engineering and ensure consistency of features across all projects by:
 1. Log into the Rasgo web app.
 2. Find the sales data.
-    a. Explore the data
-    b. Create an intial modeling dataset.
+    1. Explore the data
+    2. Create an intial modeling dataset.
 3. Find and join weather data.
 4. Aggregate weekly data and perform feature engineering.
 4. Extract the data from Rasgo to pandas for final analysis
