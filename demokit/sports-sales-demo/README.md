@@ -129,14 +129,15 @@ You can explore by **Hashtags**, **Data Sources**, **Dimensions**, or **Data Typ
 </p>
 
 where you can see the hashtags created in the previous step:
-  <img src="img/demo_sales.png" alt="demo_sales" width="96"> and <img src="img/sales_sports.png" alt="sales_sports" width="96">
+
+<img src="img/demo_sales.png" alt="demo_sales" width="128"> and <img src="img/sales_sports.png" alt="sales_sports" width=128">
 
 Clicking on either card will take you to the list of all the features with that tag (in this case, all features published in the prior step). Similarly, clicking on the **Sales Demo Data** card next to **Data Sources** will take you to the same list.
 
 This list of features will show a card for each feature. For example,
 
 <p align="center">
-  <img src="img/AVG_PRICE_MEAN_MONTH.png" alt="Average Price Mean Month" width="256">
+  <img src="img/AVG_PRICE_MEAN_MONTH.png" alt="Average Price Mean Month" width="192">
 </p>
 
 is the feature called AVG_PRICE_MEAN_MONTH, it is a floating point record (the **.00** in the upper left), comes from "Sales Demo Data", has the dimension/granularity of **Month** and **FIPS**. Clicking on the **Details** button
@@ -148,13 +149,13 @@ will show you the feature details including basic statistics, a histogram of the
 For this analysis, you are really interested in the sales data, so type "sales" into the search bar.
 
 <p align="center">
-  <img src="img/SearchBar_sales.png" alt="Search Bar" width="640">
+  <img src="img/SearchBar_sales.png" alt="Search Bar" width="768">
 </p>
 
 to show the **SALES_SUM_MONTH** card.
 
 <p align="center">
-  <img src="img/SALES_SUM_MONTH.png" alt="Sales Sum Month" width="256">
+  <img src="img/SALES_SUM_MONTH.png" alt="Sales Sum Month" width="192">
 </p>
 
 You can click on it to explore the statistics again. 
@@ -172,7 +173,7 @@ to contain all of the features of interest for the final modeling dataset. To cr
 from either the feature card or feature details page. Fill in the **COLLECTION NAME** and (optionally) the **DESCRIPTION** before clicking the **Create Collection** button.
 
 <p align="center">
-  <img src="img/CreateNewCollection.png" alt="Create Collection" width="512">
+  <img src="img/CreateNewCollection.png" alt="Create Collection" width="640">
 </p>
 
 The current collection contains only one feature (**SALES_SUM_MONTHS**). To add the additional features from the same data source, click on the *demo_sales* or *sales_sports* Hashtags 
@@ -196,19 +197,19 @@ to open a list of the rest of the features from the initial dataset. Clicking **
 to check all the features in the list and **ADD SELECTED** to the right of the **SELECT ALL** button
 
 <p align="center">
-  <img src="img/AddSelected.png" alt="Add Selected" width="512">
+  <img src="img/AddSelected.png" alt="Add Selected" width="640">
 </p>
 
 to add all the selected features to the collection. The right hand side of the screen shows that this collection contains one data source (**Sales Demo Data**) and 36 Features.
 
 <p align="center">
-  <img src="img/CollectionDetails.png" alt="Collection Details" width="512">
+  <img src="img/CollectionDetails.png" alt="Collection Details" width="640">
 </p>
 
 To expand and collapse the list of features in **Sales Demo Data**, click the bar on the right hand side.
 
 <p align="center">
-  <img src="img/ExpandSalesDemoData.png" alt="Expand Sales Demo Data Feature List" width="512">
+  <img src="img/ExpandSalesDemoData.png" alt="Expand Sales Demo Data Feature List" width="640">
 </p>
 
 To show the feature categories on the right hand side, click the **Explore Categories** button.
@@ -251,19 +252,21 @@ and the button to aggregate the data is highlighted
 
 Click this button to aggregate the weekly data to monthly. 
 
+For each of the features in the source, select the aggregations to apply to each feature. If no aggregations are selected, that feature will not be in the collection. 
+
 <p align="center">
-  <img src="img/AggSource.png" alt="Aggregate Source" width="528">
+  <img src="img/AggSource.png" alt="Aggregate Source" width="640">
 </p>
 
-For each of the features in the source, select the aggregations to apply to each feature. If no aggregations are selected, that feature will not be in the collection. Multiple aggregations for a feature can be selected if desired.
+Multiple aggregations for a feature can be selected if desired.
 
 <p align="center">
-  <img src="img/ExampleAggSource.png" alt="Aggregate Source Example" width="528">
+  <img src="img/ExampleAggSource.png" alt="Aggregate Source Example" width="640">
 </p>
 
 Click **Merge With Collection**
 
-<img src="img/MergeWithCollection.png" alt="Merge With Collection" width="128">
+<img src="img/MergeWithCollection.png" alt="Merge With Collection" width="192">
 
 to add the aggregated weather data to the collection. Scrolling down shows these new features.
 
@@ -275,25 +278,25 @@ to add the aggregated weather data to the collection. Scrolling down shows these
 There is one problem with the data. The Monthly Sales data summarizes the previous month, but the aggregated weather data is the data from that month. In order to see the impact of weather on sales, we need to change the weather data from the current month to the previoous month. This can be done by applying a **lag** function. To do this in Rasgo, click the **Transform** button on the bottom right of the screen.
 
 <p align="center">
-  <img src="img/TransformButton.png" alt="Transform Button" width="256">
+  <img src="img/TransformButton.png" alt="Transform Button" width="384">
 </p>
 
 Type "lag" in the search bar
 
 <p align="center">
-  <img src="img/LagSearch.png" alt="Lag Transform Search" width="512">
+  <img src="img/LagSearch.png" alt="Lag Transform Search" width="640">
 </p>
 
 and click on **Lag** in the list below.
 
 <p align="center">
-  <img src="img/Lag.png" alt="Select Lag" width="512">
+  <img src="img/Lag.png" alt="Select Lag" width="640">
 </p>
 
 This brings up the window to control the lag. On the left hand side, features can be selected to apply the lag to. On the right hand side, the parameters of the lag can be set.
 
 <p align="center">
-  <img src="img/LagModal.png" alt="Lag Dialog" width="528">
+  <img src="img/LagModal.png" alt="Lag Dialog" width="640">
 </p>
 
 First, set the lag to be one month by typing in "1" into the **Value** box on the right hand side.
