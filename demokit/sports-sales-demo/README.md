@@ -36,25 +36,25 @@ In order to publish and view data on the Rasgo Web App, you will need to install
 ### 2. Create account on Rasgo.
 Next, click [here](https://app.rasgoml.com/account/register) to create an account on the Rasgo UI. Fill in the required information on the web page.
 
-<img src="img/RasgoAccountRegistration.png" alt="Rasgo Account Registration">
+<img src="img/RasgoAccountRegistration.png" alt="Rasgo Account Registration" width="128">
 
 You can close the browser tab as you will receive an email from rasgo with a button to verify your email address. Click to verify.
 
-<img src="img/RasgoWelcome.png" alt="Verify Email">
+<img src="img/RasgoWelcome.png" alt="Verify Email" width="128">
 
 This will open browser tab where you can log into the UI.
 
 ### 3. Log into the Rasgo UI
 Enter your username and password and click **Login**.
 
-<img src="img/RasgoLogin.png" alt="Login to Rasgo">
+<img src="img/RasgoLogin.png" alt="Login to Rasgo" width="128">
 
 to be taken to the Rasgo App homepage.
 
 ### 4. Copy your API key
 Click the **API KEY*** button
 
-<img src="img/APIKEY.png" alt="Copy API Key">
+<img src="img/APIKEY.png" alt="Copy API Key" width="128">
 
 to copy your API key to the clipboard.
 
@@ -112,36 +112,36 @@ At this point, the senior data scientist has published the results of their data
 ### 8. Find sales data on Rasgo
 When you first open [Rasgo](https://app.rasgoml.com), you are shown the homepage that details recent activity within your organization. You can search for and examine features by clicking the feature button in the upper left hand corner.
 
-<img src="img/ShowFeatures.png" alt="Show Features">
+<img src="img/ShowFeatures.png" alt="Show Features" width="128">
 
 to take you to the **Explore Features** page.
 
 You can explore by **Hashtags**, **Data Sources**, **Dimensions**, or **Data Types**. Most commonly you will explore by **Hashtags**
 
-<img src="Hashtags.png" alt="Explore by Hashtags">
+<img src="Hashtags.png" alt="Explore by Hashtags" width="128">
 
 where you can see the hashtags created in the previous step:
-<img src="img/demo_sales.png" alt="demo_sales"> and <img src="img/sales_sports.png" alt="sales_sports">
+<img src="img/demo_sales.png" alt="demo_sales" width="128"> and <img src="img/sales_sports.png" alt="sales_sports" width="128">
 
 Clicking on either card will take you to the list of all the features with that tag (in this case, all features published in the prior step). Similarly, clicking on the **Sales Demo Data** card next to **Data Sources** will take you to the same list.
 
 This list of features will show a card for each feature. For example,
 
-<img src="img/AVG_PRICE_MEAN_MONTH.png" alt="Average Price Mean Month">
+<img src="img/AVG_PRICE_MEAN_MONTH.png" alt="Average Price Mean Month" width="128">
 
 is the feature called AVG_PRICE_MEAN_MONTH, it is a floating point record (the **.00** in the upper left), comes from "Sales Demo Data", has the dimension/granularity of **Month** and **FIPS**. Clicking on the **Details** button
 
-<img src="img/DetailsButton.png" alt="Detail Button">
+<img src="img/DetailsButton.png" alt="Detail Button" width="128">
 
 will show you the feature details including basic statistics, a histogram of the distribution, the value over time, and data quality checks. Click the browser back button to go back to the previous page and explore additional features from the list, or click **< Features** in the upper left to go back to the intial **Explore Features** page.
 
 For this analysis, you are really interested in the sales data, so type "sales" into the search bar.
 
-<img src="img/SearchBar_sales.png" alt="Search Bar">
+<img src="img/SearchBar_sales.png" alt="Search Bar" width="128">
 
 to show the **SALES_SUM_MONTH** card.
 
-<img src="img/SALES_SUM_MONTH.png" alt="Sales Sum Month">
+<img src="img/SALES_SUM_MONTH.png" alt="Sales Sum Month" width="128">
 
 You can click on it to explore the statistics again. 
 
@@ -149,43 +149,43 @@ You can click on it to explore the statistics again.
 ### 9. Create an intial modeling dataset
 Rasgo uses collections -- shown by the button in the upper left --
 
-<img src="img/Collections.png" alt="Collections">
+<img src="img/Collections.png" alt="Collections" width="128">
 
 to contain all of the features of interest for the final modeling dataset. To create a collection around the **SALES_SUM_MONTH** feature, click the **New Collection** button
 
-<img src="img/NewCollection.png" alt="New Collection">
+<img src="img/NewCollection.png" alt="New Collection" width="128">
 
 from either the feature card or feature details page. Fill in the **COLLECTION NAME** and (optionally) the **DESCRIPTION** before clicking the **Create Collection** button.
 
-<img src="img/CreateNewCollection.png" alt="Create Collection">
+<img src="img/CreateNewCollection.png" alt="Create Collection" width="128">
 
 The current collection contains only one feature (**SALES_SUM_MONTHS**). To add the additional features from the same data source, click on the *demo_sales* or *sales_sports* Hashtags 
 
-<img src="img/CollectionHashtag.png" alt="Hashtags in Collections">
+<img src="img/CollectionHashtag.png" alt="Hashtags in Collections" width="128">
 
 or the *Sales Demo Data* Data Source
 
-<img src="img/CollectionDataSource.png" alt="Data Sources in Collections">
+<img src="img/CollectionDataSource.png" alt="Data Sources in Collections" width="128">
 
 to open a list of the rest of the features from the initial dataset. Clicking **Details** for any feature will show the feature profile and **Add to Collection** will add just this feature to the collection. Since all of this data is necessary for the analysis, Click **SELECT ALL** at the top of the list
 
-<img src="img/SelectAll.png" alt="Select All">
+<img src="img/SelectAll.png" alt="Select All" width="128">
 
 to check all the features in the list and **ADD SELECTED** to the right of the **SELECT ALL** button
 
-<img src="img/AddSelected.png" alt="Add Selected">
+<img src="img/AddSelected.png" alt="Add Selected" width="128">
 
 to add all the selected features to the collection. The right hand side of the screen shows that this collection contains one data source (**Sales Demo Data**) and 36 Features.
 
-<img src="img/CollectionDetails.png" alt="Collection Details">
+<img src="img/CollectionDetails.png" alt="Collection Details" width="128">
 
 To expand and collapse the list of features in **Sales Demo Data**, click the bar on the right hand side.
 
-<img src="img/ExpandSalesDemoData.png" alt="Expand Sales Demo Data Feature List">
+<img src="img/ExpandSalesDemoData.png" alt="Expand Sales Demo Data Feature List" width="128">
 
 To show the feature categories on the right hand side, click the **Explore Categories** button.
 
-<img src="img/ExploreCategories.png" alt="Explore Categories">
+<img src="img/ExploreCategories.png" alt="Explore Categories" width="128">
 
 At this point, the collection contains all of the data that was originally uploaded from the monthly sales dataframe.
 
@@ -193,83 +193,83 @@ At this point, the collection contains all of the data that was originally uploa
 ### 10. Add weather data to the sales data
 To add the weekly weather data, we can search for data or select the relevant Hashtag or Data Source. In this case, select *Dark Sky:Weekly* from Data Sources.
 
-<img src="img/DarkSkyWeekly.png" alt="Dark Sky Weekly Weather Data">
+<img src="img/DarkSkyWeekly.png" alt="Dark Sky Weekly Weather Data" width="128">
 
 Repeat the process to select all the features and add the selected to the collection. The features don't immediately show up on the list of features in the collection. This is because the initial data is at a monthly level, but the weather data was at a weekly level. To aggregate the weather data to monthly, click on **Transform** above the Collection Features.
 
-<img src="img/Transform.png" alt="Transform">
+<img src="img/Transform.png" alt="Transform" width="128">
 
 The top of the **Transform** page shows the **DARKSKY:FIPS W...** data source and the features contained within it.
 
-<img src="img/DarkSkyAgg.png" alt="DarkSky Source">
+<img src="img/DarkSkyAgg.png" alt="DarkSky Source" width="128">
 
 This source requires aggregation as it is weekly, but the collection is monthly data. You can see this because **Dark Sky** is under the *SOURCES REQUIREING AGGREGATION*, the **DARKSKY** card has a caution symbol on it
 
-<img src="img/DarkSkyCaution.png" alt="DarkSky Aggregation Caution">
+<img src="img/DarkSkyCaution.png" alt="DarkSky Aggregation Caution" width="128">
 
 and the button to aggregate the data is highlighted
 
-<img src="img/DarkSkyAggButton.png" alt="DarkSky Aggregation Button">
+<img src="img/DarkSkyAggButton.png" alt="DarkSky Aggregation Button" width="128">
 
 Click this button to aggregate the weekly data to monthly. 
 
-<img src="img/AggSource.png" alt="Aggregate Source">
+<img src="img/AggSource.png" alt="Aggregate Source" width="128">
 
 For each of the features in the source, select the aggregations to apply to each feature. If no aggregations are selected, that feature will not be in the collection. Multiple aggregations for a feature can be selected if desired.
 
-<img src="img/ExampleAggSource.png" alt="Aggregate Source Example">
+<img src="img/ExampleAggSource.png" alt="Aggregate Source Example" width="128">
 
 Click **Merge With Collection**
 
-<img src="img/MergeWithCollection.png" alt="Merge With Collection">
+<img src="img/MergeWithCollection.png" alt="Merge With Collection" width="128">
 
 to add the aggregated weather data to the collection. Scrolling down shows these new features.
 
-<img src="img/AggFeatures.png" alt="Aggregated Features">
+<img src="img/AggFeatures.png" alt="Aggregated Features" width="128">
 
 ### 11. Lag the weather data
 There is one problem with the data. The Monthly Sales data summarizes the previous month, but the aggregated weather data is the data from that month. In order to see the impact of weather on sales, we need to change the weather data from the current month to the previoous month. This can be done by applying a **lag** function. To do this in Rasgo, click the **Transform** button on the bottom right of the screen.
 
-<img src="img/TransformButton.png" alt="Transform Button">
+<img src="img/TransformButton.png" alt="Transform Button" width="128">
 
 Type "lag" in the search bar
 
-<img src="img/LagSearch.png" alt="Lag Transform Search">
+<img src="img/LagSearch.png" alt="Lag Transform Search" width="128">
 
 and click on **Lag** in the list below.
 
-<img src="img/Lag.png" alt="Select Lag">
+<img src="img/Lag.png" alt="Select Lag" width="128">
 
 This brings up the window to control the lag. On the left hand side, features can be selected to apply the lag to. On the right hand side, the parameters of the lag can be set.
 
-<img src="img/LagModal.png" alt="Lag Dialog">
+<img src="img/LagModal.png" alt="Lag Dialog" width="128">
 
 First, set the lag to be one month by typing in "1" into the **Value** box on the right hand side.
 
-<img src="img/LagMonth.png" alt="Lag One Month">
+<img src="img/LagMonth.png" alt="Lag One Month" width="128">
 
 Then select the weather features on the left hand side.
 
-<img src="img/FeaturesToLag.png" alt="Select Features to Lag">
+<img src="img/FeaturesToLag.png" alt="Select Features to Lag" width="128">
 
 and click the **Apply *Number* Transformations** to create these lag variables.
 
-<img src="img/ApplyTransformations.png" alt="Apply Transformations Button">
+<img src="img/ApplyTransformations.png" alt="Apply Transformations Button" width="128">
 
 Additional lags and other transformations can be created using a similar process. Once you are done creating lags, the collection is complete and you are ready to pull this combined dataset into your Python environment as a Pandas dataframe.
 
 ### 12. Download the combined data to Pandas
 To tell Rasgo that you are finished creating the modeling data set, click the **Refresh Data** button in the upper right corner.
 
-<img src="img/RefreshData.png" alt="Refresh Data">
+<img src="img/RefreshData.png" alt="Refresh Data" width="128">
 
 Click either the **Refresh Training Data**
 
-<img src="img/RefreshTrainingData.png" alt="Refresh Training Data">
+<img src="img/RefreshTrainingData.png" alt="Refresh Training Data" width="128">
 
 or the **Generate Training Data** buttons.
 
-<img src="img/GenerateTrainingData.png" alt="Generate Training Data">
+<img src="img/GenerateTrainingData.png" alt="Generate Training Data" width="128">
 
 Note your collection id from the URL
 
