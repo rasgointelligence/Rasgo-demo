@@ -1,31 +1,34 @@
 # Rasgo Demonstration
 ## Demo Use Case
-You work for a large sporting good manufacture. As a senior data scientist, you have been asked to prepare the necessary data for modeling. You have been given access to:
+A large sporting good manufacturer is interested in forecasting monthly sales to help it manage its supply chain, marketing plans and pricing. The company has access to data at the store level for:
+
 - Daily sales
 - Weekly advertising spend
 - Weekly inventory and pricing
-at the store level. In addition, country wide advertising and Google trends data for key sports terms has been provided weekly.
 
-You have finished working with all of this data in Python to create a monthly summary of sales and the key factors that may drive these sales as a Pandas dataframe. You are now ready to share this data so it is available to the rest of the team.
+In addition, weekly data covering country wide advertising and Google trends data for key sports terms has been provided.
 
-Once this data is shared, a more junior data scientist is asked to examine the impact of weather on sales.
+The company has two projects for the data science team based on this data.  First, the company would like a monthly sales forecast based on all of this data.  Second, the company would like to explore the impact of outside factors on monthly sales.
 
-In this demo, working as the senior data scientist, you will:
+The data science team has assigned a senior data scientist to prepare all of the above data into a single pandas dataframe that they can then use to build the forecasting model.  In addition, the senior data scientist will share the final modeling data with the rest of the team to enable additional investigations.  Once this data is shared, the data science team assigns a junior data scientist to investigate the impact of weather on monthly sales.
+
+This demo begins with the senior data scientist having completed the data preparation process and has the sales forecasting modeling dataset in a pandas dataframe.  The demo then shows how the senior data scientist can share the data in Rasgo and how the junior data scientist can find this data, join weather data to it, prepare it for their use case and download the data into pandas for further modeling.
+
+In this demo, working as the senior data scientist, you will see how the senior data scientist can:
 1. Create an account on Rasgo.
 2. Upload the completed dataframe from Python to Rasgo.
 3. Publish that data so that others in your organization will be able to find the data.
 
-As the junior data scientist, you will:
+In addition, s the junior data scientist, you will:
 1. Log into the Rasgo web app.
 2. Find the sales data.
     a. Explore the data
     b. Create an intial modeling dataset.
 3. Find and join weather data.
 4. Aggregate weekly data and perform feature engineering.
-4. Extract the data from Rasgo to Pandas for final analysis
+4. Extract the data from Rasgo to pandas for final analysis
 
 ## Demo
-This demo assume that you have completed the data preparation process on all internal sales, marketing and inventory data to create a monthly sales dataset ready for use. The data can be found [here]().
 
 ### 1. Install PyRasgo.
 In order to publish and view data on the Rasgo Web App, you will need to install Rasgo's PyRasgo Python package to interact with the system from Python.
@@ -67,7 +70,8 @@ to copy your API key to the clipboard.
 ### 5. Connect to Rasgo from Python
 Using the API Key, create a connection to Rasgo from Python.
 
-    rasgo = pyrasgo.connect("<API Key from clipboard>")
+    api_key = "<API Key from clipboard>"
+    rasgo = pyrasgo.connect(api_key)
         
 ### 6. Copy the final modeling dataset into Python
 The data can be found [here](). You can download it into a pandas dataframe by running
@@ -80,7 +84,7 @@ Convert the date representing the month (**MONTH**) into a datetime compatible w
     modelingdf['MONTH'] = pd.to_datetime(modelingdf.MONTH).dt.date
     
 ### 7. Publish data to Rasgo
-First, the dataframe will be published to Rasgo as a source. This will create a table on Snowflake that will store the data.
+In order to share this data in Rasgo, it first needs to be stored in Rasgo as a source. This will create a table on Snowflake that will store the data.
 
     datasource = rasgo.publish.source_data(source_type="dataframe",
                                            df=modelingdf,
@@ -158,11 +162,11 @@ to show the **SALES_SUM_MONTH** card.
   <img src="img/SALES_SUM_MONTH.png" alt="Sales Sum Month" width="192">
 </p>
 
-You can click on it to explore the statistics again. 
+You can click on **Details** to explore the statistics again. 
 
 
 ### 9. Create an intial modeling dataset
-Rasgo uses collections -- shown by the button in the upper left --
+Rasgo uses collections &mdash; shown by the button in the upper left &mdash;
 
 <img src="img/Collections.png" alt="Collections" width="128">
 
@@ -226,7 +230,7 @@ To add the weekly weather data, we can search for data or select the relevant Ha
   <img src="img/DarkSkyWeekly.png" alt="Dark Sky Weekly Weather Data" width="528">
 </p>
 
-Repeat the process to select all the features and add the selected to the collection. The features don't immediately show up on the list of features in the collection. This is because the initial data is at a monthly level, but the weather data was at a weekly level. To aggregate the weather data to monthly, click on **Transform** above the Collection Features.
+Repeat the process to select all the features and add the selected to the collection. The features don't immediately show up on the list of features in the collection. This is because the initial data is at a monthly level, but the weather data was at a weekly level. To aggregate the weather data to monthly, click on **Transform** above the **Collection Features**.
 
 <p align="center">
   <img src="img/Transform.png" alt="Transform" width="512">
@@ -240,15 +244,11 @@ The top of the **Transform** page shows the **DARKSKY:FIPS W...** data source an
 
 This source requires aggregation as it is weekly, but the collection is monthly data. You can see this because **Dark Sky** is under the *SOURCES REQUIREING AGGREGATION*, the **DARKSKY** card has a caution symbol on it
 
-<p align="center">
-  <img src="img/DarkSkyCaution.png" alt="DarkSky Aggregation Caution" width="64">
-</p>
+<img src="img/DarkSkyCaution.png" alt="DarkSky Aggregation Caution" width="64">
 
 and the button to aggregate the data is highlighted
 
-<p align="center">
-  <img src="img/DarkSkyAggButton.png" alt="DarkSky Aggregation Button" width="64">
-</p>
+<img src="img/DarkSkyAggButton.png" alt="DarkSky Aggregation Button" width="64">
 
 Click this button to aggregate the weekly data to monthly. 
 
@@ -275,7 +275,7 @@ to add the aggregated weather data to the collection. Scrolling down shows these
 </p>
 
 ### 11. Lag the weather data
-There is one problem with the data. The Monthly Sales data summarizes the previous month, but the aggregated weather data is the data from that month. In order to see the impact of weather on sales, we need to change the weather data from the current month to the previoous month. This can be done by applying a **lag** function. To do this in Rasgo, click the **Transform** button on the bottom right of the screen.
+There is one issue with this data. The Monthly Sales data summarizes the previous month, but the aggregated weather data is the data from the current month. In order to see the impact of weather on sales, we need to change the weather data from the current month to the previoous month. This can be done by applying a **lag** function. To do this in Rasgo, click the **Transform** button on the bottom right of the screen.
 
 <p align="center">
   <img src="img/TransformButton.png" alt="Transform Button" width="384">
@@ -315,9 +315,9 @@ and click the **Apply *Number* Transformations** to create these lag variables.
 
 <img src="img/ApplyTransformations.png" alt="Apply Transformations Button" width="192">
 
-Additional lags and other transformations can be created using a similar process. Once you are done creating lags, the collection is complete and you are ready to pull this combined dataset into your Python environment as a Pandas dataframe.
+Additional lags and other transformations can be created using a similar process. Once you are done creating lags, the collection is complete and you are ready to pull this combined dataset into your Python environment as a pandas dataframe.
 
-### 12. Download the combined data to Pandas
+### 12. Download the combined data to pandas
 To tell Rasgo that you are finished creating the modeling data set, click the **Refresh Data** button in the upper right corner.
 
 <img src="img/RefreshData.png" alt="Refresh Data" width="192">
@@ -334,11 +334,25 @@ Note your collection id from the URL
 
     https://app.rasgoml.com/collections/<collection_id>
 
-You can then download this data into Pandas by running
+You can then download this data into pandas by running
 
     collection_id = <collection_id from URL>
     df = rasgo.read.collection_data(collection_id)
 
+## Summary
+In this demo, you have seen how a senior data scientist can leverage Rasgo to share the results of their data preparation and feature engineering process to the rest of their team by:
+1. Create an account on Rasgo.
+2. Upload the completed dataframe from Python to Rasgo.
+3. Publish that data so that others in your organization will be able to find the data.
+
+In addition, the rest of the team can easily find and extend this work to reduce duplication of data preparation and feature engineering and ensure consistency of features across all projects by:
+1. Log into the Rasgo web app.
+2. Find the sales data.
+    a. Explore the data
+    b. Create an intial modeling dataset.
+3. Find and join weather data.
+4. Aggregate weekly data and perform feature engineering.
+4. Extract the data from Rasgo to pandas for final analysis
 
 
 
