@@ -104,6 +104,7 @@ The key parameters are:
                                            
 Next, in order to make this data available for others to use within Rasgo, the data needs to be published as features.
 
+    features = [i for i in modelingdf.columns if i not in ['MONTH', 'FIPS']]
     featureset = rasgo.publish.features_from_source(data_source_id=datasource.id,
                                                     dimensions=['MONTH', 'FIPS'],
                                                     granularity=['month', 'FIPS'],
