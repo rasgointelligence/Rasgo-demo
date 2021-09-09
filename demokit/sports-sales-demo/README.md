@@ -76,9 +76,9 @@ Using the API Key, create a connection to Rasgo from Python.
     rasgo = pyrasgo.connect(api_key)
         
 ### 6. Copy the final modeling dataset into Python
-The final modeling data can be found [here](). You can download it into a pandas dataframe by running
+The final modeling data can be found [here](https://raw.githubusercontent.com/rasgointelligence/Rasgo-demo/main/demokit/sports-sales-demo/data/finalmodel.csv). You can download it into a pandas dataframe by running
 
-    url = ""
+    url = "https://raw.githubusercontent.com/rasgointelligence/Rasgo-demo/main/demokit/sports-sales-demo/data/finalmodel.csv"
     modelingdf = pd.read_csv(url)
     
 Convert the date representing the month (**MONTH**) into a datetime compatible with Rasgo to enable datetime related feature engineering and merging.
