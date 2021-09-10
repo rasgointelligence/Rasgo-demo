@@ -109,14 +109,12 @@ Next, in order to make this data available for others to use within Rasgo, the d
                                                     dimensions=['MONTH', 'FIPS'],
                                                     granularity=['month', 'FIPS'],
                                                     features=features,
-                                                    feature_set_name="Month Sports Sales",
                                                     tags=['demo_sales', 'sales_sports'],
                                                     sandbox=False)
 
 The key parameters are:
 - *dimensions*: The columns in the original dataframe or source that can be used to join or merge data together.
 - *granularity*: Certain types of columns may represent different levels within the data. For example, a date could represent an hour, a day, a week, a month, etc.
-- *feature_set_name*: The name these features can be found under on the UI.
 - *tags*: Rasgo allows you to set hashtags on features that can be used to find the features.
 - *sandbox*: Rasgo allows you to specify if the features are ready for production (**False**), otherwise (**True**) they are marked as sandbox features.
 
